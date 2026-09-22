@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gramma's Tavern — Post Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <div class="controls">
+    <h1>Gramma's Tavern<span>Post Generator</span></h1>
+
+    <div class="field">
+      <label>Mode</label>
+      <div class="segmented modes" id="modePicker">
+        <button data-mode="text">Text only</button>
+        <button data-mode="illo" class="active">Text + illo</button>
+        <button data-mode="photo">Photo</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Post content <span class="hint">drag to reorder</span></label>
+      <div class="layer-list" id="layerList"></div>
+    </div>
+
+    <div class="field" id="illoField">
+      <label>Illustration</label>
+      <div class="thumb-row" id="bgPicker"></div>
+    </div>
+
+    <div class="field" id="photoField" hidden>
+      <label>Photo</label>
+      <label class="upload-btn" for="photoInput">Choose photo…</label>
+      <input type="file" id="photoInput" accept="image/*" hidden>
+      <div class="photo-status" id="photoStatus">No photo selected</div>
+
+      <label class="sub-label">Color treatment</label>
+      <div class="segmented small" id="treatmentPicker">
+        <button data-treatment="original" class="active">Original</button>
+        <button data-treatment="bw">B&amp;W</button>
+        <button data-treatment="duotone">Duotone</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Border color</label>
+      <div class="thumb-row" id="colorPicker"></div>
+    </div>
+
+    <div class="field">
+      <label>Size</label>
+      <div class="segmented" id="ratioPicker">
+        <button data-ratio="4x5" class="active">4×5</button>
+        <button data-ratio="1x1">1×1</button>
+        <button data-ratio="9x16">9×16</button>
+      </div>
+    </div>
+
+    <button id="downloadBtn" class="download-btn">Download PNG</button>
+    <div class="dims" id="dimsLabel"></div>
+  </div>
+
+  <div class="preview">
+    <canvas id="stage"></canvas>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
